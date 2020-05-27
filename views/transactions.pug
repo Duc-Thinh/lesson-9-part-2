@@ -1,0 +1,22 @@
+form(action="/transactions/create", method="POST")
+  label() Users & Books:
+  span &nbsp
+  input(list="users" name="user" placeholder="User")
+  datalist#users
+    if lists
+      each user in lists
+         option(value=`${user.user}`)  
+  span &nbsp
+  input(list="books" name="book" placeholder="Book")
+  datalist#books
+    if list
+      each book in list
+        option(value=`${book.title}`)  
+  br
+  input(list="complete" name="complete" placeholder="isComplete")
+  datalist#complete
+    option(value='true')
+    option(value='false')
+  br
+  input(type="submit", value="create")
+  
